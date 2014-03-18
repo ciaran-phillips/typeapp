@@ -1,0 +1,40 @@
+@import 'compass/reset';
+@import "susyone";
+@import 'font-stacks';
+@import 'breakpoint';
+
+
+
+$total-columns: 12;
+$column-widths: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width / 2;
+
+$container-style: magic;
+@include border-box-sizing;
+
+body {
+    @include font-family("Baskerville");
+}
+.row {
+    @include span-columns(12);
+}
+
+.container {
+    @include container;
+}
+
+#wrapper {
+    padding:20px;
+}
+
+/**
+ * Text Styles
+ */
+h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  padding-top: 1.8em;
+  padding-bottom: 1.8em;
+}

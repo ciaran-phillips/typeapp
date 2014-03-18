@@ -1,0 +1,52 @@
+{   "scaleArr": [
+    {
+        "name": "Golden Ratio",
+        "value": 1.618
+    },
+    {
+        "name": "Minor Second",
+        "value": 1.067
+    },
+    {
+        "name": "Major Second",
+        "value": 1.125
+    },
+    {
+        "name": "Minor Third",
+        "value": 1.2
+    },
+    {
+        "name": "Major Third",
+        "value": 1.25
+    },
+    {
+        "name": "Fourth",
+        "value": 1.333
+    },
+    {
+        "name": "Diminished Fifth",
+        "value": 1.414
+    },
+    {
+        "name": "Perfect Fifth",
+        "value": 1.5
+    },
+    {
+        "name": "Minor Sixth",
+        "value": 1.6
+    },
+    {
+        "name": "Major Sixth",
+        "value": 1.667
+    },
+    {
+        "name": "Minor Seventh",
+        "value": 1.778
+    },
+    {
+        "name":"Major Seventh",
+        "value":  1.875
+    }
+]
+}
+

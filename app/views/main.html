@@ -1,0 +1,54 @@
+
+<!-- /container -->
+<header>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                    <input ng-model="text" class="form-control"/>
+                </div>
+            </div>
+    </div>
+<div class="row">
+        <form>
+            
+            <div ng-repeat='f in fonts' class="col-md-2">
+                <div class="form-group">
+                    <label  for="">Font {{$index + 1}}</label>
+                    <input ng-model="f.value" ng-change="updateGrid()" class="form-control" type="text" />
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</div>
+    
+    
+<div class="row">
+    <div>
+        <ul class="options">
+            <li  ng-class="{active : getExtra(0)}">
+                <a  ng-click="updateExtra(0)" href="" >Hide Extra</a></li>
+            <li  ng-class="{active : getExtra(1)}">
+                <a ng-click="updateExtra(1)" href="" >Show Extra</a></li>
+        </ul>
+    </div>
+    <div >
+        <ul class="scales">
+            <li  ng-class="{active : isScale(s.value)}" ng-repeat="s in ratioDistance">
+                <a ng-click="updateScale(s.value)" href="">{{ s.name }} <br /><span  class="badge scale-distance"> {{ s.order }} </span></a></li>
+        </ul>
+    </div>
+</div>
+</header>
+<div class="row">
+    <div>
+            <table class="table ">
+                <tr ng-class="{ 'extra' : isExtra(s), 'hide-extra' : getExtra(0)}"  ng-repeat="s in grid">
+                    <td class="custom" style="font-size:{{ s.left[0].size }}{{ s.left[0].unit }}">{{ text }}</td>
+                    <td class="modular" style="font-size:{{ s.right.size}}{{ s.right.unit }}">{{ text }}</td>
+                </tr>
+            </table>
+        </div>
+</div>
+
+
