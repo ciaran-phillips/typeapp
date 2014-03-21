@@ -7,11 +7,12 @@
     "es5-shim": "~2.1.0",
     "angular-resource": "1.2.6",
     "angular-route": "1.2.6",
-    "breakpoint-sass": "~2.4.2"
-  },
-  "devDependencies": {
+    "susy": "~1.0.9",
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6",
-    "modular-scale": "~2.0.4"
+    "modular-scale": "2.0.0"
+  },
+  "devDependencies": {
+    
   }
 }

@@ -1,7 +1,9 @@
+@charset "utf-8";
+
 @import 'compass/reset';
-@import "susyone";
-@import 'font-stacks';
-@import 'breakpoint';
+
+@import 'compass';
+@import "../bower_components/susy/sass/susy";
 @import "compass/css3/border-radius";
 
 @import 'modular-scale';
@@ -66,7 +68,7 @@ header {
   }
   div.options {
     background:#d7d7d7;
-    font-family:ff('calibri');
+    font-family:'calibri','Liberation Sans', 'sans';
   }
   ul {
     @include horizontal-list-container();
@@ -79,7 +81,7 @@ header {
         background-color:#00724A;
         padding:4px;
         display:block;
-        font-family:ff('calibri');
+        font-family:'calibri','Liberation Sans', 'sans';
         color:#fff;
         margin-top:1em;
         @include border-radius(4px);

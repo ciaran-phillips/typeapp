@@ -153,7 +153,6 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        require: ['susy','font-stacks'],
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
         generatedImagesDir: '.tmp/images/generated',
@@ -161,7 +160,7 @@ module.exports = function (grunt) {
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
         extensions_dir: '<%= yeoman.app %>/bower_components',
-        importPath: ['<%= yeoman.app %>/bower_components/','<%= yeoman.app %>/bower_components/breakpoint-sass'],
+        importPath: ['<%= yeoman.app %>/bower_components/'],
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
@@ -405,5 +404,5 @@ module.exports = function (grunt) {
     'build'
   ]);
   
-  grunt.registerTask('heroku', ['compass:dist']);
+  grunt.registerTask('heroku', ['build']);
 };
