@@ -10,3 +10,14 @@ angular.module('typeApp.directives', []).
     };
   }]);
   
+  angular.module('typeApp.directives', []).
+  directive('checkboxSwitch', [function() {
+    return {
+    	"link":function(scope, elm, attrs) {
+	      
+    }
+    	
+    };
+  }]);
+  
+

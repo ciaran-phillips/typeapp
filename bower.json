@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
-    "angular-scenario": "1.2.6"
+    "angular-scenario": "1.2.6",
+    "modular-scale": "~2.0.4"
   }
 }

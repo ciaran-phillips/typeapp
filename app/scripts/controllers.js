@@ -19,7 +19,7 @@ angular.module('typeApp.controllers', []).
             $scope.baseUnit = UNIT_PIXEL;
             $scope.scaleType = 0;
             $scope.scale = 1.2;
-            $scope.showExtra = 1;
+            $scope.showExtra = true;
             $scope.text = "There's a grand stretch in the evenings";
         }
         
@@ -66,12 +66,6 @@ angular.module('typeApp.controllers', []).
         };
         $scope.isExtra = function (row) {
             return row.left.length == 0;
-        };
-        $scope.updateExtra = function(extra) {
-            $scope.showExtra = extra;
-        };
-        $scope.getExtra = function(x) {
-            return (x == $scope.showExtra);
         };
         $scope.updateGrid();
         
