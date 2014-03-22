@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('typeApp.controllers', []).
-  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable',
-                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable) {
+  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation',
+                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer) {
         var UNIT_PIXEL = 0;
         var UNIT_EM = 1;
         var UNIT_PERCENT = 2;
@@ -52,8 +52,15 @@ angular.module('typeApp.controllers', []).
             var modScale = scaleGenerator.getScale($scope.scale,min,max,"em");
             $scope.customScale = scaleGenerator.customScale($scope.fonts,"em");
             
-            $scope.grid = typeTable.newGrid($scope.customScale, modScale);
-        
+            var newGrid = typeTable.newGrid($scope.customScale, modScale);
+            if (typeof $scope.grid != "undefined") {
+            	transformer.transformGrid($scope.grid, newGrid);
+            	transformer.updateGrid($scope.grid);
+            } else {
+		        $scope.grid = newGrid;
+            }
+            
+        	
             
         };
         $scope.isScale = function(value) {

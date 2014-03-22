@@ -64,7 +64,7 @@ myMod.factory("scales", function() {
         }
     ];
     return scales;
-})
+});
 
 myMod.factory("scaleDistance",[function() {
     function scaleDistanceInstance(){};
@@ -89,7 +89,7 @@ myMod.factory("scaleDistance",[function() {
         }
         ratios = this.order(ratios);
         return ratios;
-    }
+    };
     
     scaleDistanceInstance.prototype.distance = function(scale, fontOne, fontTwo) {
         
@@ -103,7 +103,7 @@ myMod.factory("scaleDistance",[function() {
         // (actually we only need to get rid of them so we can unit test)
         dist = Math.round(dist * 10000) / 10000;
         return dist;
-    }
+    };
     
     scaleDistanceInstance.prototype.getScaleDistance = function(scale, fonts) {
         
@@ -128,11 +128,11 @@ myMod.factory("scaleDistance",[function() {
             ratios[i].order = (i + 1);
         }
         return ratios;
-    }
+    };
     
     scaleDistanceInstance.prototype.log = function(num, base) {
         return Math.log(num) / Math.log(base);
-    }
+    };
     
     
     
@@ -165,7 +165,7 @@ myMod.factory('scaleGenerator', [function(){
             scale.push(f);
         }
         return scale;
-    }
+    };
     
     scaleGen.prototype.customScale = function(fonts, unit) {
         var scale = [];
@@ -177,7 +177,7 @@ myMod.factory('scaleGenerator', [function(){
             scale.push(f);
         }
         return scale;
-    }
+    };
     
     return new scaleGen();
 }]);
@@ -197,7 +197,7 @@ myMod.factory("typeTable", [function() {
         var grid = this.setRight(right);
         grid = this.setLeft(left, grid);
         return grid;
-    }
+    };
     
     
     typeTab.prototype.setRight = function(scale) {
@@ -210,7 +210,7 @@ myMod.factory("typeTable", [function() {
             grid.push(row);
         }
         return grid;
-    }
+    };
     
     typeTab.prototype.setLeft = function(scale, grid) {
         scale.sort(function(a, b) {
@@ -223,7 +223,7 @@ myMod.factory("typeTable", [function() {
                 gridIndex++;
             }
             var right = grid[gridIndex].right.size;
-            var prev = grid[gridIndex - 1].right.size
+            var prev = grid[gridIndex - 1].right.size;
             if (closerTo(prev, right, scale[i].size)) {
                 grid[gridIndex - 1].left.push(scale[i]);
             }
@@ -233,7 +233,7 @@ myMod.factory("typeTable", [function() {
         }
         return grid;
         
-    }
+    };
     
     // returns true if needle is closer to a than b
     function closerTo(a, b, needle) {
@@ -244,5 +244,77 @@ myMod.factory("typeTable", [function() {
     return new typeTab();
 }]);
 
+
+
+
+myMod.factory("transformation",[function() {
+    function transformer(){};
+    
+    // Takes a reference to current grid, and transforms it to match new one
+    // Allows us to animate transitions, rather than just replacing the grid
+    transformer.prototype.transformGrid = function(oldGrid,newGrid) {
+    	
+    	this.setTargets(oldGrid, newGrid);
+    	
+    	this.removeExtra(oldGrid, newGrid);
+    	return oldGrid;
+    	// Get new position from new grid
+    	// Set as target on old grid
+    };
+    
+    transformer.prototype.removeExtra = function(oldGrid, newGrid) {
+    	var newLength = newGrid.length;
+    	var oldLength = oldGrid.length;
+	    if (oldLength > newLength)
+		    oldGrid.splice(newLength, Number.MAX_VALUE);
+		return oldGrid;
+    };
+    transformer.prototype.setTargets = function(oldGrid, newGrid) {
+    	
+    	// We clear the targets for each row, or they can persist between operations (causing weird looking bugs!)
+		oldGrid = clearTargets(oldGrid);
+    	
+    	var gridLength = newGrid.length;
+    	// Loop through grid
+    	for (var i = 0; i < gridLength; i++) {
+    		
+    		
+    		var target = newGrid[i].right;
+    		if (i >= oldGrid.length)
+    			oldGrid.push({ left: [], right: null });
+    		oldGrid[i].targetRight = target;
+    		
+    		if (newGrid[i].left.length > 0)
+    			oldGrid[i].targetLeft = newGrid[i].left;
+    	}
+    	console.log('New: ');
+    	console.log(newGrid);
+    	console.log('Old: ');
+    	console.log(oldGrid);
+    	return oldGrid;
+    };
+    transformer.prototype.updateGrid = function(grid) {
+    	var l = grid.length;
+    	for (var i = 0; i < l; i++) {
+    		if (typeof grid[i].targetLeft != "undefined")
+	    		grid[i].left = grid[i].targetLeft;
+	    	else
+	    		grid[i].left.length = 0;
+    		grid[i].right = grid[i].targetRight;
+    	}
+    	return grid;
+    };
+    
+  	function clearTargets(grid){
+  		var l = grid.length;
+  		for (var i = 0; i < l; i++) {
+  			grid[i].targetLeft = [];
+  			grid[i].targetRight = {};
+  		}
+  		return grid;
+  	}
+    return new transformer();
+    
+}]);
 
 
