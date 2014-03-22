@@ -59,7 +59,6 @@ angular.module('typeApp.controllers', ['ngAnimate']).
             } else {
 		        $scope.grid = newGrid;
             }
-            
         	
             
         };

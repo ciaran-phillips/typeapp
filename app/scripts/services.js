@@ -287,10 +287,6 @@ myMod.factory("transformation",[function() {
     		if (newGrid[i].left.length > 0)
     			oldGrid[i].targetLeft = newGrid[i].left;
     	}
-    	console.log('New: ');
-    	console.log(newGrid);
-    	console.log('Old: ');
-    	console.log(oldGrid);
     	return oldGrid;
     };
     transformer.prototype.updateGrid = function(grid) {

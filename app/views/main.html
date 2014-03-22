@@ -45,8 +45,8 @@
     <div>
     <table class="table ">
         <tr ng-class="{ 'extra' : isExtra(s), 'hide-extra' : showExtra}"  ng-repeat="s in grid">
-            <td class="custom" style="font-size:{{ s.left[0].size }}{{ s.left[0].unit }}">{{ text }}</td>
-            <td class="modular" style="font-size:{{ s.right.size}}{{ s.right.unit }}">{{ text }}</td>
+            <td row-transform  size="{{ s.left[0].size }}" data-id="{{ $index }}" class="custom" >{{ text }}</td>
+            <td row-transform  size="{{ s.right.size }}" class="modular" >{{ text }}</td>
         </tr>
     </table>
 </div>
