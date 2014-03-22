@@ -10,9 +10,8 @@
     "susy": "~1.0.9",
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6",
-    "modular-scale": "2.0.0"
+    "modular-scale": "2.0.0",
+    "angular-animate": "1.2.6"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

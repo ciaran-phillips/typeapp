@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('typeApp.controllers', []).
+angular.module('typeApp.controllers', ['ngAnimate']).
   controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation',
                                     function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer) {
         var UNIT_PIXEL = 0;
