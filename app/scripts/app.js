@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('typeApp', [
   'ngRoute',
+  'ngAnimate',
   'typeApp.filters',
   'typeApp.services',
   'typeApp.directives',
