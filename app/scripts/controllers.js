@@ -20,7 +20,7 @@ angular.module('typeApp.controllers', ['ngAnimate']).
             $scope.scaleType = 0;
             $scope.scale = 1.2;
             $scope.showExtra = true;
-            $scope.text = "There's a grand stretch in the evenings";
+            $scope.text = "My Text Here";
         }
         
         $scope.unitOptions = [

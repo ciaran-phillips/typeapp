@@ -139,12 +139,14 @@ header div, header + div {
   text-align:center;
   margin-right:auto;
 }
-table td {
-  line-height:1.25em;
+table {
+  width:100%;
 }
 table td {
-  border-top:1px solid #ccc;
-  padding:0.5em 0;
+  width:50%;
+  overflow:hidden;
+  line-height:1.4em;
+  white-space:nowrap;
 }
 table tr.extra.hide-extra {
   display:none;
