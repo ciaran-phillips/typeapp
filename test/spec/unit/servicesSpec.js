@@ -74,5 +74,69 @@ describe('service', function() {
     });
     
     
+    describe('transformation', function() {
+    	var oldGrid = [{ 
+    			right: { size: 12 },
+    			left: [{ size: 13 }]
+    		}, {
+    			right: { size: 14.4 },
+    			left: [{ size: 16 }, {size: 16.2}]
+    		}, {
+    			right: { size: 17.28 },
+    			left: [{ size: 19 }]
+    		},
+    	];
+    	var longOldGrid = [{ 
+			right: { size: 12 },
+			left: [{ size: 13 }]
+		}, {
+			right: { size: 14.4 },
+			left: [{ size: 16 }, {size: 16.2}]
+		}, {
+			right: { size: 17.28 },
+			left: [{ size: 19 }]
+		},{
+			right: { size: 22 },
+			left: [{ size: 23 }]
+		},{
+			right: { size: 25 },
+			left: [{ size: 26 }]
+		}];
+    	var newGrid = [{ 
+			right: { size: 13 },
+			left: [{ size: 14 }]
+		}, {
+			right: { size: 15 },
+			left: [{ size: 16 }]
+		}, {
+			right: { size: 18 },
+			left: [{ size: 18 }, {size: 19}]
+		},{
+			right: { size: 21 },
+			left: [{ size: 22 }, {size: 23}]
+		}];
+    	it('should set correct targets given a new and old grid',inject(function(transformation) {
+    		
+    		oldGrid = transformation.setTargets(oldGrid, newGrid);
+    		expect(oldGrid[1].targetRight).toEqual({ size: 15 });
+    		expect(oldGrid[2].targetRight).toEqual({ size: 18 });
+    		expect(oldGrid[2].targetLeft).toEqual([{ size: 18 },{size: 19}]);
+    		
+    	}));
+    	
+    	it('should lengthen the grid if needed',inject(function(transformation) {
+    		oldGrid = transformation.setTargets(oldGrid, newGrid);
+    		expect(oldGrid.length).toEqual(4);
+    		expect(oldGrid[3].targetLeft).toEqual([{ size: 22 }, {size: 23}]);
+    		expect(oldGrid[3].left).not.toBe(undefined);
+    	}));
+    	
+    	
+    	it('should shorten the grid if needed',inject(function(transformation) {
+    		var grid = transformation.removeExtra(longOldGrid, newGrid);
+    		expect(grid.length).toEqual(4);
+    	}));
+    	
+    });    
     
 });
