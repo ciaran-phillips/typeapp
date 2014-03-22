@@ -2,8 +2,9 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('typeApp', [
+var typeApp = angular.module('typeApp', [
   'ngRoute',
+  'ngAnimate',
   'typeApp.filters',
   'typeApp.services',
   'typeApp.directives',
@@ -14,3 +15,4 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view2', {templateUrl: 'views/main.html', controller: 'MyCtrl2'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
+
