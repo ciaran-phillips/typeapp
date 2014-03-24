@@ -2,9 +2,9 @@
 
 /* Controllers */
 
-angular.module('typeApp.controllers', ['ngAnimate']).
-  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation',
-                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer) {
+angular.module('typeApp.controllers', []).
+  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation','pageParser',
+                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer, parser) {
         var UNIT_PIXEL = 0;
         var UNIT_EM = 1;
         var UNIT_PERCENT = 2;
@@ -76,6 +76,15 @@ angular.module('typeApp.controllers', ['ngAnimate']).
         $scope.updateGrid();
         
         $scope.ratioDistance = ratios;
+        
+        
+        parser.getURL("http://127.0.0.1:9000/", function(response) {
+        	console.log(response);
+        	var doc = parser.getDom(response);
+        	console.log(doc);
+        	var fonts = parser.buildFontTree(doc);
+        	console.log(fonts);
+        });
         
   }])
   .controller('MyCtrl2', [function() {

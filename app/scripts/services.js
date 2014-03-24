@@ -314,3 +314,17 @@ myMod.factory("transformation",[function() {
 }]);
 
 
+
+myMod.factory("pageParser",['$http',function($http) {
+	function parser(){};
+	
+	parser.prototype.getFonts = function() {
+		
+	};
+	
+	
+	return new parser();
+	
+	
+}]);
+
