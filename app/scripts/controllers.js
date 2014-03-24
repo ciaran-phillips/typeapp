@@ -2,9 +2,9 @@
 
 /* Controllers */
 
-angular.module('typeApp.controllers', ['ngAnimate']).
-  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation',
-                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer) {
+angular.module('typeApp.controllers', []).
+  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation','pageParser',
+                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer, parser) {
         var UNIT_PIXEL = 0;
         var UNIT_EM = 1;
         var UNIT_PERCENT = 2;
@@ -20,7 +20,7 @@ angular.module('typeApp.controllers', ['ngAnimate']).
             $scope.scaleType = 0;
             $scope.scale = 1.2;
             $scope.showExtra = true;
-            $scope.text = "There's a grand stretch in the evenings";
+            $scope.text = "My Text Here";
         }
         
         $scope.unitOptions = [
@@ -59,7 +59,6 @@ angular.module('typeApp.controllers', ['ngAnimate']).
             } else {
 		        $scope.grid = newGrid;
             }
-            
         	
             
         };
@@ -77,6 +76,8 @@ angular.module('typeApp.controllers', ['ngAnimate']).
         $scope.updateGrid();
         
         $scope.ratioDistance = ratios;
+        
+        
         
   }])
   .controller('MyCtrl2', [function() {
