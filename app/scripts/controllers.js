@@ -78,7 +78,14 @@ angular.module('typeApp.controllers', []).
         };
         $scope.to_trusted = function(html_code) {
 		    return $sce.trustAsHtml(html_code);
-		}
+		};
+		
+		$scope.showHideExtra = function() {
+			if ($scope.showExtra)
+				$scope.showExtra = false;
+			else
+				$scope.showExtra = true;
+		};
         $scope.updateGrid();
         
         $scope.ratioDistance = ratios;

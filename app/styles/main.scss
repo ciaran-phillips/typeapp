@@ -120,6 +120,7 @@ input:focus {
 }
 .options {
   background:#333;
+  padding:1em;
   color:#f9f9f9;
 }
 header div, header + div {
@@ -176,6 +177,19 @@ table tr.extra td.custom {
 }
 table tr:first-child td {
   border:0;
+}
+button {
+  background:#222222;
+  border:#999;
+  padding:1em;
+  color:#f9f9f9;
+  display:inline-block;
+  font-family:'Merriweather';
+  cursor:pointer;
+  @include border-radius(4px);
+}
+button:hover {
+  background:#555555;
 }
 /**
  * Text Styles

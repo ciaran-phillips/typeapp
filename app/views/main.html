@@ -36,8 +36,11 @@
 	        </ul>
         </div>
         <div class="options radiobutton">
-	        <p><label for="extra-switch">Hide Extra</label>
-	        	 <input id="extra-switch" checkbox-switch type="checkbox" name="extra" value="1" checked="checked" ng-model="showExtra"  /></p>
+        	<p>
+	        	 <button type="button" ng-click="showHideExtra()" ng-model="showExtra"  >
+	        	 	Show/Hide Extra
+	        	 </button>
+	        </p>
 	    </div>
     </header>
     <div><p class="sizes-hidden">Sizes Hidden: {{ numHidden }}</p></div>
