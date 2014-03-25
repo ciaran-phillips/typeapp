@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('typeApp.controllers', []).
-  controller('IndexController', ['$scope','$http','scaleDistance','scales','scaleGenerator','typeTable','transformation','pageParser',
-                                    function($scope, $http, scaleDistance, scales, scaleGenerator, typeTable, transformer, parser) {
+  controller('IndexController', ['$scope','$http','$sce','scaleDistance','scales','scaleGenerator','typeTable','transformation','pageParser',
+                                    function($scope, $http,$sce, scaleDistance, scales, scaleGenerator, typeTable, transformer, parser) {
         var UNIT_PIXEL = 0;
         var UNIT_EM = 1;
         var UNIT_PERCENT = 2;
@@ -73,6 +73,9 @@ angular.module('typeApp.controllers', []).
         $scope.isExtra = function (row) {
             return row.left.length == 0;
         };
+        $scope.to_trusted = function(html_code) {
+		    return $sce.trustAsHtml(html_code);
+		}
         $scope.updateGrid();
         
         $scope.ratioDistance = ratios;

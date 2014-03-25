@@ -15,53 +15,65 @@ var myMod = angular.module('typeApp.services', []);
 myMod.factory("scales", function() {
     var scales = [
         {
-            "name": "Golden Ratio",
-            "value": 1.618
-        },
-        {
-            "name": "Minor Second",
-            "value": 1.067
-        },
-        {
-            "name": "Major Second",
-            "value": 1.125
-        },
-        {
-            "name": "Minor Third",
-            "value": 1.2
-        },
-        {
-            "name": "Major Third",
-            "value": 1.25
-        },
-        {
-            "name": "Fourth",
-            "value": 1.333
-        },
-        {
-            "name": "Diminished Fifth",
-            "value": 1.414
-        },
-        {
-            "name": "Perfect Fifth",
-            "value": 1.5
-        },
-        {
-            "name": "Minor Sixth",
-            "value": 1.6
-        },
-        {
-            "name": "Major Sixth",
-            "value": 1.667
-        },
-        {
-            "name": "Minor Seventh",
-            "value": 1.778
-        },
-        {
-            "name":"Major Seventh",
-            "value":  1.875
-        }
+        "name": "Golden Ratio",
+        "value": 1.618,
+        "ratio": "<sup>1.618</sup>&frasl;</sub>1</sub>"
+    },
+    {
+        "name": "Minor Second",
+        "value": 1.067,
+        "ratio": "<sup>16</sup>&frasl;<sub>15</sub>"
+    },
+    {
+        "name": "Major Second",
+        "value": 1.125,
+        "ratio": "<sup>9</sup>&frasl;<sub>8</sub>"
+    },
+    {
+        "name": "Minor Third",
+        "value": 1.2,
+        "ratio": "<sup>6</sup>&frasl;<sub>5</sub>"
+    },
+    {
+        "name": "Major Third",
+        "value": 1.25,
+        "ratio": "<sup>5</sup>&frasl;<sub>4</sub>"
+    },
+    {
+        "name": "Fourth",
+        "value": 1.333,
+        "ratio": "<sup>4</sup>&frasl;<sub>3</sub>"
+    },
+    {
+        "name": "Diminished Fifth",
+        "value": 1.414,
+        "ratio": "<sup>&radic;2</sup>&frasl;<sub>1</sub>"
+    },
+    {
+        "name": "Perfect Fifth",
+        "value": 1.5,
+        "ratio": "<sup>3</sup>&frasl;<sub>2</sub>"
+    },
+    {
+        "name": "Minor Sixth",
+        "value": 1.6,
+        "ratio": "<sup>8</sup>&frasl;<sub>5</sub>"
+    },
+    {
+        "name": "Major Sixth",
+        "value": 1.667,
+        "ratio": "<sup>5</sup>&frasl;<sub>3</sub>"
+    },
+    {
+        "name": "Minor Seventh",
+        "value": 1.778,
+        "ratio": "<sup>16</sup>&frasl;<sub>9</sub>"
+    },
+    {
+        "name":"Major Seventh",
+        "value":  1.875,
+        "ratio": "<sup>15</sup>&frasl;<sub>9</sub>"
+    }
     ];
     return scales;
 });
@@ -84,6 +96,7 @@ myMod.factory("scaleDistance",[function() {
                 "id": n,
                 "name": scales[n].name,
                 "value": scales[n].value,
+                "ratio": scales[n].ratio,
                 "distance": dist
             });
         }
