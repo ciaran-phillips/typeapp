@@ -101,6 +101,9 @@ header {
     margin-right:0; 
   }
 }
+.sizes-hidden {
+  text-align:center;
+}
 input{
   padding:0.5em;
   border-radius:4px;
@@ -113,6 +116,7 @@ input:focus {
 }
 .page {
   @include span-columns( 12);  
+  color:#f9f9f9;
 }
 .options {
   background:#333;

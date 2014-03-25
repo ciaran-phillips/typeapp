@@ -191,7 +191,6 @@ myMod.factory('scaleGenerator', [function(){
         }
         return scale;
     };
-    
     return new scaleGen();
 }]);
 
@@ -246,6 +245,17 @@ myMod.factory("typeTable", [function() {
         }
         return grid;
         
+    };
+    
+    
+    typeTab.prototype.getHidden = function(grid) {
+    	var l = grid.length;
+    	var counter = 0;
+    	for (var i = 0; i < l; i++) {
+    		if (grid[i].left.length > 1)
+    			counter += (grid[i].left.length - 1);
+    	}
+    	return counter;
     };
     
     // returns true if needle is closer to a than b

@@ -40,13 +40,18 @@
 	        	 <input id="extra-switch" checkbox-switch type="checkbox" name="extra" value="1" checked="checked" ng-model="showExtra"  /></p>
 	    </div>
     </header>
+    <div><p class="sizes-hidden">Sizes Hidden: {{ numHidden }}</p></div>
     <table class="table ">
+    	
+    	<tbody>
+    		
         <tr ng-class="{ 'extra' : isExtra(s), 'hide-extra' : showExtra}"  ng-repeat="s in grid | orderBy: '-right.size'">
             <td class="size">{{ s.left[0].size }}em</td>
             <td row-transform  size="{{ s.left[0].size }}" data-id="{{ $index }}" class="custom" >{{ text }}</td>
             <td class="size">{{ s.right.size }}em</td>
             <td row-transform  size="{{ s.right.size }}" class="modular" >{{ text }}</td>
         </tr>
+        </tbody>
     </table>
 
 </div>

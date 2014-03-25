@@ -21,6 +21,7 @@ angular.module('typeApp.controllers', []).
             $scope.scale = 1.2;
             $scope.showExtra = true;
             $scope.text = "My Text Here";
+            $scope.numHidden = 0;
         }
         
         $scope.unitOptions = [
@@ -53,6 +54,7 @@ angular.module('typeApp.controllers', []).
             $scope.customScale = scaleGenerator.customScale($scope.fonts,"em");
             
             var newGrid = typeTable.newGrid($scope.customScale, modScale);
+            $scope.numHidden = typeTable.getHidden(newGrid);
             if (typeof $scope.grid != "undefined") {
             	transformer.transformGrid($scope.grid, newGrid);
             	transformer.updateGrid($scope.grid);
