@@ -171,7 +171,7 @@ myMod.factory('scaleGenerator', [function(){
         var scale = [];
         while ((base / ratio) < top){
             var f = new fontObjInst();
-            f.size = base;
+            f.size = Math.round(base * 1000) / 1000;
             f.unit = unit;
             f.text = "Hello";
             base = base * ratio;

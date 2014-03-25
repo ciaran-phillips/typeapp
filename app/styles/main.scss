@@ -74,7 +74,7 @@ header {
         text-align:center;
         padding:4px;
         display:block;
-        color:#bbb;
+        color:#f9f9f9;
         margin-top:1em;
         @include border-radius(4px);
       }
@@ -148,12 +148,24 @@ table {
 table td {
   width:50%;
   overflow:hidden;
-  line-height:1.4em;
+  line-height:1.5em;
   color:#f9f9f9;
   white-space:nowrap;
 }
+table td.size {
+  width:60px;
+  padding-right:10px;
+  text-align:right;
+}
 table tr.extra.hide-extra {
   display:none;
+}
+table tr td:first-child {
+  @include prefix(0.5);
+}
+table tr:hover {
+  background:#888;
+  cursor:pointer;
 }
 table tr.extra td.custom {
   opacity:0;
