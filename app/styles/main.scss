@@ -32,6 +32,7 @@ $default-box-shadow-color: #fbfbfb;
 body {
   font-family:$myfont;
   line-height:150%;
+  background:#444;
   color:#222222;
 }
 h1 {
@@ -63,13 +64,6 @@ label {
 header {
   padding-bottom:1em;
   margin-bottom:1em;
-  div.scales {
-    background:#eeeeee;
-  }
-  div.options {
-    background:#d7d7d7;
-    font-family:'calibri','Liberation Sans', 'sans';
-  }
   ul {
     @include horizontal-list-container();
     li {
@@ -78,16 +72,13 @@ header {
       a {
         text-decoration:none;
         text-align:center;
-        background-color:#00724A;
         padding:4px;
         display:block;
-        font-family:'calibri','Liberation Sans', 'sans';
-        color:#fff;
+        color:#bbb;
         margin-top:1em;
         @include border-radius(4px);
       }
       a:hover {
-        background:#2eb888;
       }
     }
    
@@ -146,6 +137,7 @@ table td {
   width:50%;
   overflow:hidden;
   line-height:1.4em;
+  color:#f9f9f9;
   white-space:nowrap;
 }
 table tr.extra.hide-extra {
