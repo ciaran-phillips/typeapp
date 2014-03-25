@@ -18,7 +18,7 @@
             <input ng-model="text" class="form-control"/>
         </div>
     </div>
-    <div ng-repeat='f in fonts'>
+    <div class="animate" ng-repeat='f in fonts'>
         <div>
             <label  for="">Font {{$index + 1}}</label>
             <input ng-model="f.value" ng-change="updateGrid()" class="form-control" type="text" />
@@ -31,7 +31,7 @@
         <div class="scales">
 	        	
 	        <ul class="scales">
-	            <li  ng-class="{active : isScale(s.value)}" ng-repeat="s in ratioDistance | orderBy: '+order'">
+	            <li  class="animate" ng-class="{active : isScale(s.value)}" ng-repeat="s in ratioDistance">
 	                <a ng-click="updateScale(s.value)" href=""><span  class="ratio" ng-bind-html="to_trusted(s.ratio)"> </span> {{ s.name }}  </a></li>
 	        </ul>
         </div>
