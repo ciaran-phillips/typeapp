@@ -17,7 +17,7 @@ myMod.factory("scales", function() {
         {
         "name": "Golden Ratio",
         "value": 1.618,
-        "ratio": "<sup>1.618</sup>&frasl;</sub>1</sub>"
+        "ratio": "<sup>1.618</sup>&frasl;<sub>1</sub>"
     },
     {
         "name": "Minor Second",
@@ -90,7 +90,7 @@ myMod.factory("scaleDistance",[function() {
         var numScales = scales.length;
         var ratios = [];
         for (var n = 0; n < numScales; n++) {
-            
+         
             var dist = this.getScaleDistance(scales[n], fonts);
             ratios.push({
                 "id": n,
@@ -105,8 +105,8 @@ myMod.factory("scaleDistance",[function() {
     };
     
     scaleDistanceInstance.prototype.distance = function(scale, fontOne, fontTwo) {
+        var multiple = this.log(fontOne.value / fontTwo.value, scale);
         
-        var multiple = this.log(fontOne / fontTwo, scale);
         var dist = (multiple % 1);
         dist = Math.abs(dist);
         if (dist > 0.5) {

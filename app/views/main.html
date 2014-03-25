@@ -31,8 +31,8 @@
         <div class="scales">
 	        	
 	        <ul class="scales">
-	            <li  ng-class="{active : isScale(s.value)}" ng-repeat="s in ratioDistance">
-	                <a ng-click="updateScale(s.value)" href=""><span  class="ratio" ng-bind-html="to_trusted(s.ratio)"> </span>{{ s.order }} {{ s.name }}  </a></li>
+	            <li  ng-class="{active : isScale(s.value)}" ng-repeat="s in ratioDistance | orderBy: '+order'">
+	                <a ng-click="updateScale(s.value)" href=""><span  class="ratio" ng-bind-html="to_trusted(s.ratio)"> </span> {{ s.name }}  </a></li>
 	        </ul>
         </div>
         <div class="options radiobutton">
@@ -42,7 +42,7 @@
     </header>
     <div>
     <table class="table ">
-        <tr ng-class="{ 'extra' : isExtra(s), 'hide-extra' : showExtra}"  ng-repeat="s in grid">
+        <tr ng-class="{ 'extra' : isExtra(s), 'hide-extra' : showExtra}"  ng-repeat="s in grid | orderBy: '-right.size'">
             <td row-transform  size="{{ s.left[0].size }}" data-id="{{ $index }}" class="custom" >{{ text }}</td>
             <td row-transform  size="{{ s.right.size }}" class="modular" >{{ text }}</td>
         </tr>

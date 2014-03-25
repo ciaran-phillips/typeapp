@@ -60,6 +60,7 @@ angular.module('typeApp.controllers', []).
 		        $scope.grid = newGrid;
             }
         	
+        	$scope.ratioDistance = scaleDistance.setScale($scope.fonts, scales);
             
         };
         $scope.isScale = function(value) {
