@@ -93,6 +93,9 @@ header {
       @include span-columns(2,12);
       &:nth-child(6n) { @include omega; }
     }
+    ul.scales li.active a, ul.scales li a:hover {
+      background:#777;
+    }
   } 
   ul.scales li:last-child {
     margin-right:0; 
@@ -110,6 +113,10 @@ input:focus {
 }
 .page {
   @include span-columns( 12);  
+}
+.options {
+  background:#333;
+  color:#f9f9f9;
 }
 header div, header + div {
   padding-bottom:1em;
