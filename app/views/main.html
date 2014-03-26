@@ -60,31 +60,31 @@
         </tr>
         </tbody>
     </table>
-	<div>
-		
-		<div id="about" class="overlay overlay-animation" ng-if="overlayAbout">
-			
-			<button class="close-btn" ng-click="$parent.overlayAbout=!$parent.overlayAbout">Close</button>
-			<h1>About this thing</h1> 
-			<p>
-				There's been a big increase in the focus on Typography as the basis for web design in the last few years.
-				One of the trends that have emerged as a result is the use of Modular Scales for design (though typographic scales have obviously
-				been in use for many years), made popular by the <em>A List Apart</em> article: 
-				<a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a>
-			</p>
-			<p>
-				This app is intended to help the process of improving typography on existing sites. If a site uses
-				arbitrarily chosen font choices, then it can be difficult to force them onto a scale without making large
-				changes. This app tests input font sizes against various commonly used modular scales, works out which one's
-				 the closest fit, and then matches your font sizes with the nearest equivalents on that scale.
-			</p>
-			<p>
-				More than anything else though, this is an experiment with Angularjs. 
-			</p>
-		</div>
-	</div>
 </div>
 
+<div id="overlays">
+	
+	<div id="about" class="overlay overlay-animation" ng-if="overlayAbout">
+		
+		<button class="close-btn" ng-click="$parent.overlayAbout=!$parent.overlayAbout">Close</button>
+		<h1>About this thing</h1> 
+		<p>
+			There's been a big increase in the focus on Typography as the basis for web design in the last few years.
+			One of the trends that have emerged as a result is the use of Modular Scales for design (though typographic scales have obviously
+			been in use for many years), made popular by the <em>A List Apart</em> article: 
+			<a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a>
+		</p>
+		<p>
+			This app is intended to help the process of improving typography on existing sites. If a site uses
+			arbitrarily chosen font choices, then it can be difficult to force them onto a scale without making large
+			changes. This app tests input font sizes against various commonly used modular scales, works out which one's
+			 the closest fit, and then matches your font sizes with the nearest equivalents on that scale.
+		</p>
+		<p>
+			More than anything else though, this is an experiment with Angularjs. 
+		</p>
+	</div>
+</div>
 
 
 
