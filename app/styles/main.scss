@@ -114,6 +114,9 @@ input:focus {
   color:#222;
   @include box-shadow();
 }
+#wrapper {
+  min-height:100%;
+}
 .page {
   @include span-columns( 12);  
   position:relative;
@@ -197,7 +200,6 @@ button:hover {
 
 /* OVERLAYS */
 .overlay {
-  display:none;
   position:absolute;
   top:0;
   left:0;
@@ -277,4 +279,34 @@ sup             { vertical-align: super }
 }
 .animate.ng-move {
   opacity:0.5;
+}
+
+
+.overlay-animation.ng-enter,
+{
+    transition: all 350ms ease;
+    position: absolute;
+    display: block;
+    top:0;
+    left:100%;
+}
+.overlay-animation.ng-enter-active, {
+  transition:all 350ms ease;
+  position:absolute;
+  left:0;
+  top:0;
+}
+.overlay-animation.ng-leave,
+{
+    transition: all 350ms ease;
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+}
+.overlay-animation.ng-leave-active, {
+  transition:all 350ms ease;
+  position:absolute;
+  left:100%;
+  top:0;
 }

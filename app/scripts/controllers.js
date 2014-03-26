@@ -22,6 +22,7 @@ angular.module('typeApp.controllers', []).
             $scope.showExtra = true;
             $scope.text = "My Text Here";
             $scope.numHidden = 0;
+            $scope.overlayAbout = false;
         }
         
         $scope.unitOptions = [
