@@ -86,6 +86,7 @@ angular.module('typeApp.controllers', []).
 			else
 				$scope.showExtra = true;
 		};
+		
         $scope.updateGrid();
         
         $scope.ratioDistance = ratios;

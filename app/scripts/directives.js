@@ -10,14 +10,7 @@ myApp.directive('appVersion', ['version', function(version) {
     };
   }]);
   
-myApp.directive('checkboxSwitch', [function() {
-    return {
-    	"link":function(scope, elm, attrs) {
-	      
-    }
-    	
-    };
-  }]);
+
   
 myApp.directive('rowTransform', [function() {
 		return {
@@ -32,6 +25,16 @@ myApp.directive('rowTransform', [function() {
 		};
  }]);
  
-
+myApp.directive('overlay',function() {
+	return {
+		"link": function(scope, elm, attrs) {
+			elm.bind('click',function() {
+				var id = attrs.overlay;
+				var elem = $("#" + id);
+				$(elem).toggle();
+			});
+		}
+	};
+});
   
 

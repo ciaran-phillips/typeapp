@@ -116,11 +116,14 @@ input:focus {
 }
 .page {
   @include span-columns( 12);  
+  position:relative;
   color:#f9f9f9;
+  min-height:100%;
 }
 .options {
   background:#333;
   padding:1em;
+  text-align:center;
   color:#f9f9f9;
 }
 header div, header + div {
@@ -190,6 +193,35 @@ button {
 }
 button:hover {
   background:#555555;
+}
+
+/* OVERLAYS */
+.overlay {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  background:#222222;
+  opacity:0.96;
+  padding:2em;
+  width:100%;
+  min-height:100%;
+  border-left:1px solid #f9f9f9;
+  h1 {
+    text-align:center;
+    margin-bottom:1em;
+  }
+  p {
+    margin-top:1em;
+    margin-left:auto;
+    line-height:1.5em;
+    margin-right:auto;
+    max-width:700px;
+  }
+}
+.close-btn {
+  background:#111;
+  float:right;
 }
 /**
  * Text Styles
