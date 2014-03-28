@@ -169,7 +169,7 @@ myMod.factory('scaleGenerator', [function(){
     
     scaleGen.prototype.getScale = function(ratio, base, top, unit ) {
         var scale = [];
-        while ((base / ratio) < top){
+        while ((base / ratio) < top && base != 0){
             var f = new fontObjInst();
             f.size = Math.round(base * 1000) / 1000;
             f.unit = unit;
