@@ -15,7 +15,7 @@
     <div>
         <div>
         	<label>Default Text: </label>
-            <input ng-model="text" class="form-control"/>
+            <input ng-model="text" min="1" class="form-control"/>
         </div>
     </div>
     <div class="animate" ng-repeat='f in fonts'>
@@ -28,6 +28,9 @@
 </div>
 <div class="page">
 	<header>
+		<div class="options">
+			<p>Scales are ordered according to how closely they match your input font sizes</p>
+		</div>
         <div class="scales">
 	        	
 	        <ul class="scales">
